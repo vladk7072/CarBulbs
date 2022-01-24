@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-ford-ponts-circle-dims { width: 13px; height: 13px; }
+	.svg-index-blog-posts-img-arrow-dims { width: 18px; height: 36px; }
+	.svg-index-browse-white-arrow-dims { width: 50px; height: 21px; }
+	.svg-index-choose-decor-arrow-dims { width: 44px; height: 26px; }
+	.svg-index-find-reset-dims { width: 11px; height: 11px; }
+	.svg-index-find-search-dims { width: 20px; height: 20px; }
+	.svg-index-find-triangle-dims { width: 15px; height: 17px; }
+	.svg-index-find-triangle-down-dims { width: 9px; height: 7px; }
+	.svg-index-footer-black-arrow-dims { width: 50px; height: 21px; }
+	.svg-index-footer-decor-dims { width: 81px; height: 72px; }
+	.svg-index-footer-facebook-dims { width: 10px; height: 16px; }
+	.svg-index-footer-grey-arrow-dims { width: 50px; height: 21px; }
+	.svg-index-footer-instagram-dims { width: 14px; height: 14px; }
+	.svg-index-footer-white-arrow-dims { width: 50px; height: 21px; }
+	.svg-index-footer-youtube-dims { width: 16px; height: 12px; }
+	.svg-index-logo-dims { width: 126px; height: 28px; }
+	.svg-index-menu-arrow-dims { width: 9px; height: 6px; }
+	.svg-index-models-bg-dims { width: 285px; height: 226px; }
+	.svg-index-top-decor-1-dims { width: 152px; height: 153px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+
+-->
+
+			<ul>
+
+				<li title="ford-ponts-circle">
+					<div class="icon-box">
+
+						<!-- ford-ponts-circle -->
+						<img src="../icons/icons.svg#ford-ponts-circle" class="svg-ford-ponts-circle-dims" alt="ford-ponts-circle"/>
+
+					</div>
+					<h2>ford-ponts-circle</h2>
+				</li>
+				<li title="index-blog-posts-img-arrow">
+					<div class="icon-box">
+
+						<!-- index-blog-posts-img-arrow -->
+						<img src="../icons/icons.svg#index-blog-posts-img-arrow" class="svg-index-blog-posts-img-arrow-dims" alt="index-blog-posts-img-arrow"/>
+
+					</div>
+					<h2>index-blog-posts-img-arrow</h2>
+				</li>
+				<li title="index-browse-white-arrow">
+					<div class="icon-box">
+
+						<!-- index-browse-white-arrow -->
+						<img src="../icons/icons.svg#index-browse-white-arrow" class="svg-index-browse-white-arrow-dims" alt="index-browse-white-arrow"/>
+
+					</div>
+					<h2>index-browse-white-arrow</h2>
+				</li>
+				<li title="index-choose-decor-arrow">
+					<div class="icon-box">
+
+						<!-- index-choose-decor-arrow -->
+						<img src="../icons/icons.svg#index-choose-decor-arrow" class="svg-index-choose-decor-arrow-dims" alt="index-choose-decor-arrow"/>
+
+					</div>
+					<h2>index-choose-decor-arrow</h2>
+				</li>
+				<li title="index-find-reset">
+					<div class="icon-box">
+
+						<!-- index-find-reset -->
+						<img src="../icons/icons.svg#index-find-reset" class="svg-index-find-reset-dims" alt="index-find-reset"/>
+
+					</div>
+					<h2>index-find-reset</h2>
+				</li>
+				<li title="index-find-search">
+					<div class="icon-box">
+
+						<!-- index-find-search -->
+						<img src="../icons/icons.svg#index-find-search" class="svg-index-find-search-dims" alt="index-find-search"/>
+
+					</div>
+					<h2>index-find-search</h2>
+				</li>
+				<li title="index-find-triangle">
+					<div class="icon-box">
+
+						<!-- index-find-triangle -->
+						<img src="../icons/icons.svg#index-find-triangle" class="svg-index-find-triangle-dims" alt="index-find-triangle"/>
+
+					</div>
+					<h2>index-find-triangle</h2>
+				</li>
+				<li title="index-find-triangle-down">
+					<div class="icon-box">
+
+						<!-- index-find-triangle-down -->
+						<img src="../icons/icons.svg#index-find-triangle-down" class="svg-index-find-triangle-down-dims" alt="index-find-triangle-down"/>
+
+					</div>
+					<h2>index-find-triangle-down</h2>
+				</li>
+				<li title="index-footer-black-arrow">
+					<div class="icon-box">
+
+						<!-- index-footer-black-arrow -->
+						<img src="../icons/icons.svg#index-footer-black-arrow" class="svg-index-footer-black-arrow-dims" alt="index-footer-black-arrow"/>
+
+					</div>
+					<h2>index-footer-black-arrow</h2>
+				</li>
+				<li title="index-footer-decor">
+					<div class="icon-box">
+
+						<!-- index-footer-decor -->
+						<img src="../icons/icons.svg#index-footer-decor" class="svg-index-footer-decor-dims" alt="index-footer-decor"/>
+
+					</div>
+					<h2>index-footer-decor</h2>
+				</li>
+				<li title="index-footer-facebook">
+					<div class="icon-box">
+
+						<!-- index-footer-facebook -->
+						<img src="../icons/icons.svg#index-footer-facebook" class="svg-index-footer-facebook-dims" alt="index-footer-facebook"/>
+
+					</div>
+					<h2>index-footer-facebook</h2>
+				</li>
+				<li title="index-footer-grey-arrow">
+					<div class="icon-box">
+
+						<!-- index-footer-grey-arrow -->
+						<img src="../icons/icons.svg#index-footer-grey-arrow" class="svg-index-footer-grey-arrow-dims" alt="index-footer-grey-arrow"/>
+
+					</div>
+					<h2>index-footer-grey-arrow</h2>
+				</li>
+				<li title="index-footer-instagram">
+					<div class="icon-box">
+
+						<!-- index-footer-instagram -->
+						<img src="../icons/icons.svg#index-footer-instagram" class="svg-index-footer-instagram-dims" alt="index-footer-instagram"/>
+
+					</div>
+					<h2>index-footer-instagram</h2>
+				</li>
+				<li title="index-footer-white-arrow">
+					<div class="icon-box">
+
+						<!-- index-footer-white-arrow -->
+						<img src="../icons/icons.svg#index-footer-white-arrow" class="svg-index-footer-white-arrow-dims" alt="index-footer-white-arrow"/>
+
+					</div>
+					<h2>index-footer-white-arrow</h2>
+				</li>
+				<li title="index-footer-youtube">
+					<div class="icon-box">
+
+						<!-- index-footer-youtube -->
+						<img src="../icons/icons.svg#index-footer-youtube" class="svg-index-footer-youtube-dims" alt="index-footer-youtube"/>
+
+					</div>
+					<h2>index-footer-youtube</h2>
+				</li>
+				<li title="index-logo">
+					<div class="icon-box">
+
+						<!-- index-logo -->
+						<img src="../icons/icons.svg#index-logo" class="svg-index-logo-dims" alt="index-logo"/>
+
+					</div>
+					<h2>index-logo</h2>
+				</li>
+				<li title="index-menu-arrow">
+					<div class="icon-box">
+
+						<!-- index-menu-arrow -->
+						<img src="../icons/icons.svg#index-menu-arrow" class="svg-index-menu-arrow-dims" alt="index-menu-arrow"/>
+
+					</div>
+					<h2>index-menu-arrow</h2>
+				</li>
+				<li title="index-models-bg">
+					<div class="icon-box">
+
+						<!-- index-models-bg -->
+						<img src="../icons/icons.svg#index-models-bg" class="svg-index-models-bg-dims" alt="index-models-bg"/>
+
+					</div>
+					<h2>index-models-bg</h2>
+				</li>
+				<li title="index-top-decor-1">
+					<div class="icon-box">
+
+						<!-- index-top-decor-1 -->
+						<img src="../icons/icons.svg#index-top-decor-1" class="svg-index-top-decor-1-dims" alt="index-top-decor-1"/>
+
+					</div>
+					<h2>index-top-decor-1</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Mon, 24 Jan 2022 14:40:09 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
