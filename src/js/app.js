@@ -9,4 +9,11 @@ $(function(){
     }
     $($(this)).addClass("find__btn--active");
   });
+
+  $(".bulbs__aside-item").click(function () {
+    if(!$(this).hasClass('bulbs__aside-item--active')){
+      $(".bulbs__aside-item--active").removeClass("bulbs__aside-item--active")
+    }
+    $($(this)).addClass("bulbs__aside-item--active");
+  });
 });

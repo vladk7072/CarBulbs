@@ -520,10 +520,10 @@
     margin: 30px auto 75px;
     padding-left: 23px;
     position: relative;
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
-      background-image: url('../img/icons/icons.svg#blog-reset');
+      background-image: url("../img/icons/icons.svg#blog-reset");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -1034,6 +1034,7 @@
     color: #000;
     position: relative;
     z-index: 2;
+    margin-bottom: 13px;
     &::before {
       content: "";
       position: absolute;
@@ -1044,6 +1045,11 @@
       right: -1px;
       background-color: $accent;
       z-index: -1;
+    }
+    &-lights {
+      &::before {
+        display: none;
+      }
     }
   }
 }
@@ -1220,7 +1226,7 @@
 }
 .h11 {
   padding-bottom: 100px;
-  &__title{
+  &__title {
     margin-top: 43px;
   }
   &__content {
@@ -1243,6 +1249,70 @@
       margin-left: 0;
       margin-top: 10px;
     }
+  }
+}
+.bulbs {
+  padding-bottom: 170px;
+  &__aside {
+    max-width: 263px;
+    width: 100%;
+    margin-right: 30px;
+  }
+  &__aside-items {
+    & + .bulbs__aside-items {
+      margin-top: 30px;
+    }
+  }
+  &__aside-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    padding: 11px 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    & + .bulbs__aside-item {
+      margin-top: 20px;
+    }
+    &--active {
+      border: 2px solid #1b6fb7;
+      .bulbs__aside-text {
+        color: #1b6fb7;
+      }
+      .bulbs__aside-img {
+        .bulbs__aside-path {
+          fill: #38a934;
+        }
+      }
+    }
+  }
+  &__aside-path{
+    transition: all .3s;
+  }
+  &__aside-title {
+    margin-top: 30px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 30px;
+    @extend %osw-500;
+    color: #000;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__aside-img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    margin-right: 14px;
+  }
+  &__aside-text {
+    font-size: 16px;
+    line-height: 20px;
+    @extend %mul-700;
+    color: #000;
+    transition: all 0.3s;
   }
 }
 

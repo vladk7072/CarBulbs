@@ -8,7 +8,7 @@
   font-weight: 400;
 }
 
-.clean__tools-title, .footer__top-btn, .browse__ford-pont::before, .blog-posts__subtext, .find__selects-item, .find__btn, .top-btn {
+.bulbs__aside-title, .clean__tools-title, .footer__top-btn, .browse__ford-pont::before, .blog-posts__subtext, .find__selects-item, .find__btn, .top-btn {
   font-family: Oswald;
   font-weight: 500;
 }
@@ -38,7 +38,7 @@
   font-weight: 500;
 }
 
-.h11__footer-item span, .clean__footer-title, .footer__main-title span, .top__text span {
+.bulbs__aside-text, .h11__footer-item span, .clean__footer-title, .footer__main-title span, .top__text span {
   font-family: Mulish;
   font-weight: 700;
 }
@@ -1240,6 +1240,7 @@ body {
   color: #000;
   position: relative;
   z-index: 2;
+  margin-bottom: 13px;
 }
 .ford__blog-title::before {
   content: "";
@@ -1251,6 +1252,9 @@ body {
   right: -1px;
   background-color: #1B6FB7;
   z-index: -1;
+}
+.ford__blog-title-lights::before {
+  display: none;
 }
 
 .ford-choose {
@@ -1438,4 +1442,63 @@ body {
 .h11__footer-item + .h11__footer-item {
   margin-left: 0;
   margin-top: 10px;
+}
+
+.bulbs {
+  padding-bottom: 170px;
+}
+.bulbs__aside {
+  max-width: 263px;
+  width: 100%;
+  margin-right: 30px;
+}
+.bulbs__aside-items + .bulbs__aside-items {
+  margin-top: 30px;
+}
+.bulbs__aside-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 11px 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+.bulbs__aside-item + .bulbs__aside-item {
+  margin-top: 20px;
+}
+.bulbs__aside-item--active {
+  border: 2px solid #1b6fb7;
+}
+.bulbs__aside-item--active .bulbs__aside-text {
+  color: #1b6fb7;
+}
+.bulbs__aside-item--active .bulbs__aside-img .bulbs__aside-path {
+  fill: #38a934;
+}
+.bulbs__aside-path {
+  transition: all 0.3s;
+}
+.bulbs__aside-title {
+  margin-top: 30px;
+  margin-bottom: 14px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+}
+.bulbs__aside-title:first-child {
+  margin-top: 0;
+}
+.bulbs__aside-img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  margin-right: 14px;
+}
+.bulbs__aside-text {
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  transition: all 0.3s;
 }
