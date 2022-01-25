@@ -1,0 +1,28 @@
+@media (max-width: 1060px) {
+  .header {
+    &__wrapper {
+      position: relative;
+    }
+    &__menu {
+      position: absolute;
+      top: 88px;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      &-list {
+        flex-direction: column;
+      }
+      &-item {
+        & + .header__menu-item {
+          margin-left: 0;
+        }
+      }
+    }
+    &__input{
+      position: absolute;
+      top: 88px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
