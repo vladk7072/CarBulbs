@@ -1252,7 +1252,11 @@
   }
 }
 .bulbs {
-  padding-bottom: 170px;
+  padding: 45px 0 170px;
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
   &__aside {
     max-width: 263px;
     width: 100%;
@@ -1287,8 +1291,8 @@
       }
     }
   }
-  &__aside-path{
-    transition: all .3s;
+  &__aside-path {
+    transition: all 0.3s;
   }
   &__aside-title {
     margin-top: 30px;
@@ -1313,6 +1317,81 @@
     @extend %mul-700;
     color: #000;
     transition: all 0.3s;
+  }
+  &__content {
+    background: #ffffff;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    padding: 30px 30px 22px;
+    &-text {
+      margin: 20px 0 25px;
+    }
+  }
+}
+.reference {
+  &__subtitle {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    @extend %osw-500;
+    color: #000;
+    margin: 25px 0 30px;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    background: #fff;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    margin-bottom: 22px;
+  }
+  &__item{
+    padding: 22px 38px;
+    white-space: nowrap;
+    &:nth-child(9),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(12),
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(15),
+    &:nth-child(16),
+    &:nth-child(25),
+    &:nth-child(26),
+    &:nth-child(27),
+    &:nth-child(28),
+    &:nth-child(29),
+    &:nth-child(30),
+    &:nth-child(31),
+    &:nth-child(32),
+    &:nth-child(33){
+      background: rgba(240, 240, 240, 0.34);
+    }
+  }
+  &__item-num {
+    font-size: 17px;
+    line-height: 21px;
+    color: #000;
+    @extend %mul-700;
+    padding-left: 13px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/icons/icons.svg#index-menu-arrow");
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 6px;
+      height: 9px;
+      transform: rotate(-90deg);
+      top: 7px;
+      left: 0;
+    }
+  }
+}
+.h7{
+  &__title{
+    margin-bottom: 24px;
   }
 }
 
